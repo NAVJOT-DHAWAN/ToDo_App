@@ -1,8 +1,9 @@
+
 <title>My Todos</title>
-<h1>Stuff I need to do.</h1>
+<h1 style="font-size:40px;color:red">Stuff I need to do.</h1>
 
 <form action = "/todos" method = "post">
-     <input type="text" name="description">
+     <input style="border:2px solid black" type="text" name="description">
      <button>Add</button>
 </form>
 
@@ -16,7 +17,7 @@
    {{/todos}} 
 </ul>
 
-<h3>Done</h3>
+<h2 style="color:green">Done</h2>
 <ul>
    {{#doneTodos}}
       <li> 
