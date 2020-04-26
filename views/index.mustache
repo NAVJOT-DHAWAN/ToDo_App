@@ -1,7 +1,7 @@
 <title>My Todos</title>
 <h1>Stuff I need to do.</h1>
 
-<form action="/todos" method="post">
+<form action = "/todos" method = "post">
      <input type="text" name="description">
      <button>Add</button>
 </form>
@@ -9,7 +9,9 @@
 <ul>
    {{#todos}}
       <li> 
-        {{description}} - {{done}}       
+         <form action = "/todos/{{_id}}/completed" method = "post">
+           {{description}} - {{done}}  <button type = "submit">Done</button>
+         </form>
       </li>
    {{/todos}} 
 </ul>
