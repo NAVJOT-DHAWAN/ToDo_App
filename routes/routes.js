@@ -3,7 +3,15 @@ const Todo = require('../models/todos');
 
 router.get('/', function (req, res) {
     Todo.find({}).then(function (results) {
-        res.render('index', { todos: results });
+        let todos = results.filter(function(todos){
+            return !todos.done;
+        });
+        
+        let doneTodos = results.filter(function(todos){
+            return todos.done;
+        });        
+      
+        res.render('index', { todos: todos, doneTodos: doneTodos });
     });
 
 });
