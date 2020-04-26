@@ -2,7 +2,10 @@ const router = require('express').Router();
 const Todo = require('../models/todos');
 
 router.get('/',function(req,res){
-    res.render('index',{});
+    Todo.find({}).then(function(results){
+        res.render('index',{ todos : results });
+    });
+    
 });
 
 router.post("/todos",function(req,res){
